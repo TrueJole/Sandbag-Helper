@@ -1,0 +1,90 @@
+[gd_scene load_steps=2 format=3 uid="uid://dupyccnutupbc"]
+
+[ext_resource type="Script" uid="uid://dxm0s5lle1045" path="res://Sandbags.gd" id="1_0fbet"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0fbet")
+
+[node name="DirectionLabel" type="Label" parent="."]
+z_index = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+
+[node name="CountLabel" type="Label" parent="."]
+z_index = 2
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -69.0
+offset_right = 1.0
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+
+[node name="Left" type="Button" parent="."]
+z_index = 2
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -15.5
+offset_right = 18.0
+offset_bottom = 15.5
+grow_vertical = 2
+text = "<"
+
+[node name="Right" type="Button" parent="."]
+z_index = 2
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -15.5
+offset_bottom = 15.5
+grow_horizontal = 0
+grow_vertical = 2
+text = ">"
+
+[node name="Reset" type="Button" parent="."]
+layout_mode = 1
+offset_right = 51.0
+offset_bottom = 31.0
+text = "Reset"
+
+[node name="Grid" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -87.0
+offset_bottom = 31.0
+grow_horizontal = 0
+toggle_mode = true
+text = "Show Grid"
+
+[connection signal="button_up" from="Left" to="." method="_on_left_button_up"]
+[connection signal="button_up" from="Right" to="." method="_on_right_button_up"]
+[connection signal="button_up" from="Reset" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="Reset" to="." method="_on_reset_button_up"]
+[connection signal="button_up" from="Grid" to="." method="_on_grid_button_up"]
+[connection signal="toggled" from="Grid" to="." method="_on_grid_toggled"]
