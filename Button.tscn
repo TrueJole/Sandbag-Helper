@@ -9,7 +9,7 @@ offset_bottom = 20.0
 toggle_mode = true
 flat = true
 script = ExtResource("1_nhor4")
-standard_color = Color(1, 0, 0, 0.611765)
+standard_color = Color(0.917647, 0.6, 0.6, 0.611765)
 sandbag_color = Color(0, 0.636506, 0.392078, 0.611765)
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -20,7 +20,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-color = Color(1, 0, 0, 0.611765)
+color = Color(0.917647, 0.6, 0.6, 0.611765)
 
 [connection signal="button_up" from="." to="." method="_on_button_up"]
 [connection signal="pressed" from="." to="." method="_on_pressed"]

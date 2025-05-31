@@ -31,6 +31,7 @@ offset_right = 124.0
 offset_bottom = 417.0
 x_coordinate = 5
 y_coordinate = 4
+standard_color = Color(0.713726, 0.843137, 0.658824, 0.611765)
 
 [node name="Button7" parent="." instance=ExtResource("2_po8w5")]
 layout_mode = 0
@@ -40,6 +41,7 @@ offset_right = 104.0
 offset_bottom = 363.0
 x_coordinate = 6
 y_coordinate = 3
+standard_color = Color(1, 1, 0, 0.611765)
 
 [node name="Button10" parent="." instance=ExtResource("2_po8w5")]
 layout_mode = 0
@@ -49,6 +51,7 @@ offset_right = 565.0
 offset_bottom = 362.0
 x_coordinate = 6
 y_coordinate = 4
+standard_color = Color(1, 1, 0, 0.611765)
 
 [node name="Button11" parent="." instance=ExtResource("2_po8w5")]
 layout_mode = 0
@@ -58,6 +61,7 @@ offset_right = 1039.0
 offset_bottom = 363.0
 x_coordinate = 6
 y_coordinate = 5
+standard_color = Color(1, 1, 0, 0.611765)
 
 [node name="Button12" parent="." instance=ExtResource("2_po8w5")]
 layout_mode = 0
@@ -67,6 +71,7 @@ offset_right = 332.0
 offset_bottom = 310.0
 x_coordinate = 7
 y_coordinate = 3
+standard_color = Color(0.964706, 0.698039, 0.419608, 0.611765)
 
 [node name="Button13" parent="." instance=ExtResource("2_po8w5")]
 layout_mode = 0
@@ -76,6 +81,7 @@ offset_right = 570.0
 offset_bottom = 309.0
 x_coordinate = 7
 y_coordinate = 4
+standard_color = Color(0.964706, 0.698039, 0.419608, 0.611765)
 
 [node name="Button14" parent="." instance=ExtResource("2_po8w5")]
 layout_mode = 0
@@ -85,6 +91,7 @@ offset_right = 819.0
 offset_bottom = 309.0
 x_coordinate = 7
 y_coordinate = 5
+standard_color = Color(0.964706, 0.698039, 0.419608, 0.611765)
 
 [node name="Button15" parent="." instance=ExtResource("2_po8w5")]
 layout_mode = 0
@@ -94,6 +101,7 @@ offset_right = 1057.0
 offset_bottom = 308.0
 x_coordinate = 7
 y_coordinate = 6
+standard_color = Color(0.964706, 0.698039, 0.419608, 0.611765)
 
 [node name="Button21" parent="." instance=ExtResource("2_po8w5")]
 layout_mode = 0
@@ -157,6 +165,7 @@ offset_right = 88.0
 offset_bottom = 310.0
 x_coordinate = 7
 y_coordinate = 2
+standard_color = Color(0.964706, 0.698039, 0.419608, 0.611765)
 
 [node name="Button9" parent="." instance=ExtResource("2_po8w5")]
 layout_mode = 0
@@ -175,6 +184,7 @@ offset_right = 1088.0
 offset_bottom = 410.0
 x_coordinate = 5
 y_coordinate = 5
+standard_color = Color(0.713726, 0.843137, 0.658824, 0.611765)
 
 [node name="Button4" parent="." instance=ExtResource("2_po8w5")]
 layout_mode = 0
@@ -184,6 +194,7 @@ offset_right = 1101.0
 offset_bottom = 360.0
 x_coordinate = 6
 y_coordinate = 6
+standard_color = Color(1, 1, 0, 0.611765)
 
 [node name="Button5" parent="." instance=ExtResource("2_po8w5")]
 layout_mode = 0
@@ -193,6 +204,7 @@ offset_right = 1116.0
 offset_bottom = 305.0
 x_coordinate = 7
 y_coordinate = 7
+standard_color = Color(0.964706, 0.698039, 0.419608, 0.611765)
 
 [node name="Button6" parent="." instance=ExtResource("2_po8w5")]
 layout_mode = 0
