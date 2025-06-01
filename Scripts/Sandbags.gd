@@ -72,6 +72,8 @@ func _on_grid_toggled(toggled_on: bool) -> void:
 		view = GRID.instantiate()
 		add_child(view)
 		move_child(view, 0)
+		$Grid.text = "Show Stairs"
 	else:
 		direction = direction
+		$Grid.text = "Show Grid"
 	
