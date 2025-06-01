@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dupyccnutupbc"]
 
-[ext_resource type="Script" uid="uid://dxm0s5lle1045" path="res://Sandbags.gd" id="1_0fbet"]
+[ext_resource type="Script" uid="uid://dxm0s5lle1045" path="res://Scripts/Sandbags.gd" id="1_0fbet"]
 
 [node name="Control" type="Control"]
 layout_mode = 3

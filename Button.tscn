@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dkl2sj4chabhn"]
 
-[ext_resource type="Script" uid="uid://lysyejlw8nke" path="res://button.gd" id="1_nhor4"]
+[ext_resource type="Script" uid="uid://lysyejlw8nke" path="res://Scripts/button.gd" id="1_nhor4"]
 
 [node name="Button" type="Button"]
 z_index = 1

@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://c7oexb38f7wsl"]
 
 [ext_resource type="Texture2D" uid="uid://b584felceajka" path="res://Assets/Grid.png" id="1_61cg2"]
-[ext_resource type="Script" uid="uid://hrrx2861qe1v" path="res://Views/grid.gd" id="1_lnaan"]
-[ext_resource type="Script" uid="uid://bdojunxebjvyb" path="res://Views/gridX.gd" id="2_73ekl"]
+[ext_resource type="Script" uid="uid://hrrx2861qe1v" path="res://Scripts/grid.gd" id="1_lnaan"]
+[ext_resource type="Script" uid="uid://bdojunxebjvyb" path="res://Scripts/gridX.gd" id="2_73ekl"]
 
 [node name="Grid" type="Control"]
 layout_mode = 3
