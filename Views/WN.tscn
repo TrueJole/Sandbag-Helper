@@ -156,7 +156,6 @@ offset_right = 225.0
 offset_bottom = 278.0
 x_coordinate = 1
 y_coordinate = 7
-standard_color = Color(0.917647, 0.6, 0.6, 1)
 
 [node name="Button8" parent="." instance=ExtResource("2_ob1fp")]
 layout_mode = 0
