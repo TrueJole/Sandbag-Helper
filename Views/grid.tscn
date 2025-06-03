@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7oexb38f7wsl"]
+[gd_scene load_steps=5 format=3 uid="uid://c7oexb38f7wsl"]
 
 [ext_resource type="Texture2D" uid="uid://b584felceajka" path="res://Assets/Grid.png" id="1_61cg2"]
 [ext_resource type="Script" uid="uid://hrrx2861qe1v" path="res://Scripts/grid.gd" id="1_lnaan"]
 [ext_resource type="Script" uid="uid://bdojunxebjvyb" path="res://Scripts/gridX.gd" id="2_73ekl"]
+[ext_resource type="Texture2D" uid="uid://dlvjvydttju42" path="res://Assets/FloorGrid.png" id="4_sfyqg"]
 
 [node name="Grid" type="Control"]
 layout_mode = 3
@@ -13,65 +14,58 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lnaan")
 
-[node name="Save" type="Button" parent="."]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -96.0
-offset_top = -31.0
-grow_horizontal = 0
-grow_vertical = 0
-tooltip_text = "Saves image to standard picture folder"
-text = "Save Image"
+offset_left = 109.0
+offset_top = 61.0
+offset_right = 177.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.775, 0.775)
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1220, 617)
+render_target_update_mode = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SubViewportContainer/SubViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="SubViewportContainer/SubViewport/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -300.0
-offset_right = 300.0
-offset_bottom = 300.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
-transparent_bg = true
-handle_input_locally = false
-size = Vector2i(600, 600)
-render_target_update_mode = 4
-
-[node name="Control" type="Control" parent="SubViewportContainer/SubViewport"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextureRect" type="TextureRect" parent="SubViewportContainer/SubViewport/Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+offset_left = -304.5
+offset_top = -305.5
+offset_right = 304.5
+offset_bottom = 305.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_61cg2")
-expand_mode = 1
-stretch_mode = 5
+expand_mode = 3
 
-[node name="Label" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 69.0
-offset_top = 54.0
-offset_right = 109.0
-offset_bottom = 123.0
+offset_left = 71.1123
+offset_top = 64.6109
+offset_right = 111.112
+offset_bottom = 133.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -79,12 +73,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 1
 y_coordinate = 1
 
-[node name="Label2" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label2" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 130.0
-offset_top = 54.0
-offset_right = 170.0
-offset_bottom = 123.0
+offset_left = 132.112
+offset_top = 64.6109
+offset_right = 172.112
+offset_bottom = 133.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -92,12 +86,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 2
 y_coordinate = 1
 
-[node name="Label3" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label3" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 190.0
-offset_top = 54.0
-offset_right = 230.0
-offset_bottom = 123.0
+offset_left = 192.112
+offset_top = 64.6109
+offset_right = 232.112
+offset_bottom = 133.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -105,12 +99,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 3
 y_coordinate = 1
 
-[node name="Label4" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label4" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 251.0
-offset_top = 54.0
-offset_right = 291.0
-offset_bottom = 123.0
+offset_left = 253.112
+offset_top = 64.6109
+offset_right = 293.112
+offset_bottom = 133.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -118,12 +112,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 4
 y_coordinate = 1
 
-[node name="Label5" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label5" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 313.0
-offset_top = 54.0
-offset_right = 353.0
-offset_bottom = 123.0
+offset_left = 315.112
+offset_top = 64.6109
+offset_right = 355.112
+offset_bottom = 133.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -131,12 +125,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 5
 y_coordinate = 1
 
-[node name="Label6" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label6" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 374.0
-offset_top = 55.0
-offset_right = 414.0
-offset_bottom = 124.0
+offset_left = 376.112
+offset_top = 65.6109
+offset_right = 416.112
+offset_bottom = 134.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -144,12 +138,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 6
 y_coordinate = 1
 
-[node name="Label7" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label7" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 436.0
-offset_top = 54.0
-offset_right = 476.0
-offset_bottom = 123.0
+offset_left = 438.112
+offset_top = 64.6109
+offset_right = 478.112
+offset_bottom = 133.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -157,12 +151,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 7
 y_coordinate = 1
 
-[node name="Label8" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label8" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 495.0
-offset_top = 54.0
-offset_right = 535.0
-offset_bottom = 123.0
+offset_left = 497.112
+offset_top = 64.6109
+offset_right = 537.112
+offset_bottom = 133.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -170,12 +164,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 8
 y_coordinate = 1
 
-[node name="Label9" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label9" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 69.0
-offset_top = 112.0
-offset_right = 109.0
-offset_bottom = 181.0
+offset_left = 71.1123
+offset_top = 122.611
+offset_right = 111.112
+offset_bottom = 191.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -183,12 +177,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 1
 y_coordinate = 2
 
-[node name="Label10" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label10" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 130.0
-offset_top = 112.0
-offset_right = 170.0
-offset_bottom = 181.0
+offset_left = 132.112
+offset_top = 122.611
+offset_right = 172.112
+offset_bottom = 191.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -196,12 +190,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 2
 y_coordinate = 2
 
-[node name="Label11" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label11" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 190.0
-offset_top = 112.0
-offset_right = 230.0
-offset_bottom = 181.0
+offset_left = 192.112
+offset_top = 122.611
+offset_right = 232.112
+offset_bottom = 191.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -209,12 +203,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 3
 y_coordinate = 2
 
-[node name="Label12" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label12" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 251.0
-offset_top = 112.0
-offset_right = 291.0
-offset_bottom = 181.0
+offset_left = 253.112
+offset_top = 122.611
+offset_right = 293.112
+offset_bottom = 191.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -222,12 +216,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 4
 y_coordinate = 2
 
-[node name="Label13" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label13" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 313.0
-offset_top = 112.0
-offset_right = 353.0
-offset_bottom = 181.0
+offset_left = 315.112
+offset_top = 122.611
+offset_right = 355.112
+offset_bottom = 191.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -235,12 +229,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 5
 y_coordinate = 2
 
-[node name="Label14" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label14" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 374.0
-offset_top = 113.0
-offset_right = 414.0
-offset_bottom = 182.0
+offset_left = 376.112
+offset_top = 123.611
+offset_right = 416.112
+offset_bottom = 192.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -248,12 +242,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 6
 y_coordinate = 2
 
-[node name="Label15" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label15" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 436.0
-offset_top = 112.0
-offset_right = 476.0
-offset_bottom = 181.0
+offset_left = 438.112
+offset_top = 122.611
+offset_right = 478.112
+offset_bottom = 191.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -261,12 +255,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 7
 y_coordinate = 2
 
-[node name="Label16" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label16" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 495.0
-offset_top = 112.0
-offset_right = 535.0
-offset_bottom = 181.0
+offset_left = 497.112
+offset_top = 122.611
+offset_right = 537.112
+offset_bottom = 191.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -274,12 +268,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 8
 y_coordinate = 2
 
-[node name="Label17" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label17" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 69.0
-offset_top = 175.0
-offset_right = 109.0
-offset_bottom = 244.0
+offset_left = 71.1123
+offset_top = 185.611
+offset_right = 111.112
+offset_bottom = 254.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -287,12 +281,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 1
 y_coordinate = 3
 
-[node name="Label18" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label18" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 130.0
-offset_top = 175.0
-offset_right = 170.0
-offset_bottom = 244.0
+offset_left = 132.112
+offset_top = 185.611
+offset_right = 172.112
+offset_bottom = 254.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -300,12 +294,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 2
 y_coordinate = 3
 
-[node name="Label19" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label19" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 190.0
-offset_top = 175.0
-offset_right = 230.0
-offset_bottom = 244.0
+offset_left = 192.112
+offset_top = 185.611
+offset_right = 232.112
+offset_bottom = 254.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -313,12 +307,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 3
 y_coordinate = 3
 
-[node name="Label20" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label20" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 251.0
-offset_top = 175.0
-offset_right = 291.0
-offset_bottom = 244.0
+offset_left = 253.112
+offset_top = 185.611
+offset_right = 293.112
+offset_bottom = 254.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -326,12 +320,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 4
 y_coordinate = 3
 
-[node name="Label21" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label21" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 313.0
-offset_top = 175.0
-offset_right = 353.0
-offset_bottom = 244.0
+offset_left = 315.112
+offset_top = 185.611
+offset_right = 355.112
+offset_bottom = 254.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -339,12 +333,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 5
 y_coordinate = 3
 
-[node name="Label22" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label22" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 374.0
-offset_top = 176.0
-offset_right = 414.0
-offset_bottom = 245.0
+offset_left = 376.112
+offset_top = 186.611
+offset_right = 416.112
+offset_bottom = 255.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -352,12 +346,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 6
 y_coordinate = 3
 
-[node name="Label23" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label23" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 436.0
-offset_top = 175.0
-offset_right = 476.0
-offset_bottom = 244.0
+offset_left = 438.112
+offset_top = 185.611
+offset_right = 478.112
+offset_bottom = 254.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -365,12 +359,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 7
 y_coordinate = 3
 
-[node name="Label24" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label24" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 495.0
-offset_top = 175.0
-offset_right = 535.0
-offset_bottom = 244.0
+offset_left = 497.112
+offset_top = 185.611
+offset_right = 537.112
+offset_bottom = 254.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -378,12 +372,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 8
 y_coordinate = 3
 
-[node name="Label25" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label25" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 69.0
-offset_top = 235.0
-offset_right = 109.0
-offset_bottom = 304.0
+offset_left = 71.1123
+offset_top = 245.611
+offset_right = 111.112
+offset_bottom = 314.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -391,12 +385,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 1
 y_coordinate = 4
 
-[node name="Label26" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label26" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 130.0
-offset_top = 235.0
-offset_right = 170.0
-offset_bottom = 304.0
+offset_left = 132.112
+offset_top = 245.611
+offset_right = 172.112
+offset_bottom = 314.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -404,12 +398,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 2
 y_coordinate = 4
 
-[node name="Label27" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label27" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 190.0
-offset_top = 235.0
-offset_right = 230.0
-offset_bottom = 304.0
+offset_left = 192.112
+offset_top = 245.611
+offset_right = 232.112
+offset_bottom = 314.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -417,12 +411,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 3
 y_coordinate = 4
 
-[node name="Label28" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label28" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 251.0
-offset_top = 235.0
-offset_right = 291.0
-offset_bottom = 304.0
+offset_left = 253.112
+offset_top = 245.611
+offset_right = 293.112
+offset_bottom = 314.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -430,12 +424,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 4
 y_coordinate = 4
 
-[node name="Label29" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label29" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 313.0
-offset_top = 235.0
-offset_right = 353.0
-offset_bottom = 304.0
+offset_left = 315.112
+offset_top = 245.611
+offset_right = 355.112
+offset_bottom = 314.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -443,12 +437,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 5
 y_coordinate = 4
 
-[node name="Label30" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label30" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 374.0
-offset_top = 236.0
-offset_right = 414.0
-offset_bottom = 305.0
+offset_left = 376.112
+offset_top = 246.611
+offset_right = 416.112
+offset_bottom = 315.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -456,12 +450,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 6
 y_coordinate = 4
 
-[node name="Label31" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label31" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 436.0
-offset_top = 235.0
-offset_right = 476.0
-offset_bottom = 304.0
+offset_left = 438.112
+offset_top = 245.611
+offset_right = 478.112
+offset_bottom = 314.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -469,12 +463,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 7
 y_coordinate = 4
 
-[node name="Label32" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label32" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 495.0
-offset_top = 235.0
-offset_right = 535.0
-offset_bottom = 304.0
+offset_left = 497.112
+offset_top = 245.611
+offset_right = 537.112
+offset_bottom = 314.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -482,12 +476,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 8
 y_coordinate = 4
 
-[node name="Label33" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label33" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 69.0
-offset_top = 293.0
-offset_right = 109.0
-offset_bottom = 362.0
+offset_left = 71.1123
+offset_top = 303.611
+offset_right = 111.112
+offset_bottom = 372.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -495,12 +489,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 1
 y_coordinate = 5
 
-[node name="Label34" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label34" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 130.0
-offset_top = 293.0
-offset_right = 170.0
-offset_bottom = 362.0
+offset_left = 132.112
+offset_top = 303.611
+offset_right = 172.112
+offset_bottom = 372.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -508,12 +502,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 2
 y_coordinate = 5
 
-[node name="Label35" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label35" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 190.0
-offset_top = 293.0
-offset_right = 230.0
-offset_bottom = 362.0
+offset_left = 192.112
+offset_top = 303.611
+offset_right = 232.112
+offset_bottom = 372.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -521,12 +515,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 3
 y_coordinate = 5
 
-[node name="Label36" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label36" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 251.0
-offset_top = 293.0
-offset_right = 291.0
-offset_bottom = 362.0
+offset_left = 253.112
+offset_top = 303.611
+offset_right = 293.112
+offset_bottom = 372.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -534,12 +528,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 4
 y_coordinate = 5
 
-[node name="Label37" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label37" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 313.0
-offset_top = 293.0
-offset_right = 353.0
-offset_bottom = 362.0
+offset_left = 315.112
+offset_top = 303.611
+offset_right = 355.112
+offset_bottom = 372.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -547,12 +541,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 5
 y_coordinate = 5
 
-[node name="Label38" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label38" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 374.0
-offset_top = 294.0
-offset_right = 414.0
-offset_bottom = 363.0
+offset_left = 376.112
+offset_top = 304.611
+offset_right = 416.112
+offset_bottom = 373.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -560,12 +554,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 6
 y_coordinate = 5
 
-[node name="Label39" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label39" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 436.0
-offset_top = 293.0
-offset_right = 476.0
-offset_bottom = 362.0
+offset_left = 438.112
+offset_top = 303.611
+offset_right = 478.112
+offset_bottom = 372.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -573,12 +567,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 7
 y_coordinate = 5
 
-[node name="Label40" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label40" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 495.0
-offset_top = 293.0
-offset_right = 535.0
-offset_bottom = 362.0
+offset_left = 497.112
+offset_top = 303.611
+offset_right = 537.112
+offset_bottom = 372.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -586,12 +580,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 8
 y_coordinate = 5
 
-[node name="Label41" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label41" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 69.0
-offset_top = 351.0
-offset_right = 109.0
-offset_bottom = 420.0
+offset_left = 71.1123
+offset_top = 361.611
+offset_right = 111.112
+offset_bottom = 430.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -599,12 +593,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 1
 y_coordinate = 6
 
-[node name="Label42" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label42" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 130.0
-offset_top = 351.0
-offset_right = 170.0
-offset_bottom = 420.0
+offset_left = 132.112
+offset_top = 361.611
+offset_right = 172.112
+offset_bottom = 430.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -612,12 +606,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 2
 y_coordinate = 6
 
-[node name="Label43" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label43" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 190.0
-offset_top = 351.0
-offset_right = 230.0
-offset_bottom = 420.0
+offset_left = 192.112
+offset_top = 361.611
+offset_right = 232.112
+offset_bottom = 430.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -625,12 +619,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 3
 y_coordinate = 6
 
-[node name="Label44" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label44" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 251.0
-offset_top = 351.0
-offset_right = 291.0
-offset_bottom = 420.0
+offset_left = 253.112
+offset_top = 361.611
+offset_right = 293.112
+offset_bottom = 430.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -638,12 +632,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 4
 y_coordinate = 6
 
-[node name="Label45" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label45" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 313.0
-offset_top = 351.0
-offset_right = 353.0
-offset_bottom = 420.0
+offset_left = 315.112
+offset_top = 361.611
+offset_right = 355.112
+offset_bottom = 430.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -651,12 +645,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 5
 y_coordinate = 6
 
-[node name="Label46" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label46" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 374.0
-offset_top = 352.0
-offset_right = 414.0
-offset_bottom = 421.0
+offset_left = 376.112
+offset_top = 362.611
+offset_right = 416.112
+offset_bottom = 431.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -664,12 +658,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 6
 y_coordinate = 6
 
-[node name="Label47" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label47" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 436.0
-offset_top = 351.0
-offset_right = 476.0
-offset_bottom = 420.0
+offset_left = 438.112
+offset_top = 361.611
+offset_right = 478.112
+offset_bottom = 430.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -677,12 +671,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 7
 y_coordinate = 6
 
-[node name="Label48" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label48" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 495.0
-offset_top = 351.0
-offset_right = 535.0
-offset_bottom = 420.0
+offset_left = 497.112
+offset_top = 361.611
+offset_right = 537.112
+offset_bottom = 430.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -690,12 +684,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 8
 y_coordinate = 6
 
-[node name="Label49" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label49" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 69.0
-offset_top = 415.0
-offset_right = 109.0
-offset_bottom = 484.0
+offset_left = 71.1123
+offset_top = 425.611
+offset_right = 111.112
+offset_bottom = 494.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -703,12 +697,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 1
 y_coordinate = 7
 
-[node name="Label50" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label50" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 130.0
-offset_top = 415.0
-offset_right = 170.0
-offset_bottom = 484.0
+offset_left = 132.112
+offset_top = 425.611
+offset_right = 172.112
+offset_bottom = 494.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -716,12 +710,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 2
 y_coordinate = 7
 
-[node name="Label51" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label51" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 190.0
-offset_top = 415.0
-offset_right = 230.0
-offset_bottom = 484.0
+offset_left = 192.112
+offset_top = 425.611
+offset_right = 232.112
+offset_bottom = 494.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -729,12 +723,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 3
 y_coordinate = 7
 
-[node name="Label52" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label52" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 251.0
-offset_top = 415.0
-offset_right = 291.0
-offset_bottom = 484.0
+offset_left = 253.112
+offset_top = 425.611
+offset_right = 293.112
+offset_bottom = 494.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -742,12 +736,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 4
 y_coordinate = 7
 
-[node name="Label53" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label53" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 313.0
-offset_top = 415.0
-offset_right = 353.0
-offset_bottom = 484.0
+offset_left = 315.112
+offset_top = 425.611
+offset_right = 355.112
+offset_bottom = 494.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -755,12 +749,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 5
 y_coordinate = 7
 
-[node name="Label54" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label54" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 374.0
-offset_top = 416.0
-offset_right = 414.0
-offset_bottom = 485.0
+offset_left = 376.112
+offset_top = 426.611
+offset_right = 416.112
+offset_bottom = 495.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -768,12 +762,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 6
 y_coordinate = 7
 
-[node name="Label55" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label55" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 436.0
-offset_top = 415.0
-offset_right = 476.0
-offset_bottom = 484.0
+offset_left = 438.112
+offset_top = 425.611
+offset_right = 478.112
+offset_bottom = 494.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -781,12 +775,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 7
 y_coordinate = 7
 
-[node name="Label56" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label56" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 495.0
-offset_top = 415.0
-offset_right = 535.0
-offset_bottom = 484.0
+offset_left = 497.112
+offset_top = 425.611
+offset_right = 537.112
+offset_bottom = 494.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -794,12 +788,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 8
 y_coordinate = 7
 
-[node name="Label57" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label57" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 69.0
-offset_top = 472.0
-offset_right = 109.0
-offset_bottom = 541.0
+offset_left = 71.1123
+offset_top = 482.611
+offset_right = 111.112
+offset_bottom = 551.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -807,12 +801,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 1
 y_coordinate = 8
 
-[node name="Label58" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label58" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 130.0
-offset_top = 472.0
-offset_right = 170.0
-offset_bottom = 541.0
+offset_left = 132.112
+offset_top = 482.611
+offset_right = 172.112
+offset_bottom = 551.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -820,12 +814,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 2
 y_coordinate = 8
 
-[node name="Label59" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label59" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 190.0
-offset_top = 472.0
-offset_right = 230.0
-offset_bottom = 541.0
+offset_left = 192.112
+offset_top = 482.611
+offset_right = 232.112
+offset_bottom = 551.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -833,12 +827,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 3
 y_coordinate = 8
 
-[node name="Label60" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label60" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 251.0
-offset_top = 472.0
-offset_right = 291.0
-offset_bottom = 541.0
+offset_left = 253.112
+offset_top = 482.611
+offset_right = 293.112
+offset_bottom = 551.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -846,12 +840,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 4
 y_coordinate = 8
 
-[node name="Label61" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label61" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 313.0
-offset_top = 472.0
-offset_right = 353.0
-offset_bottom = 541.0
+offset_left = 315.112
+offset_top = 482.611
+offset_right = 355.112
+offset_bottom = 551.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -859,12 +853,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 5
 y_coordinate = 8
 
-[node name="Label62" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label62" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 374.0
-offset_top = 473.0
-offset_right = 414.0
-offset_bottom = 542.0
+offset_left = 376.112
+offset_top = 483.611
+offset_right = 416.112
+offset_bottom = 552.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -872,12 +866,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 6
 y_coordinate = 8
 
-[node name="Label63" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label63" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 436.0
-offset_top = 472.0
-offset_right = 476.0
-offset_bottom = 541.0
+offset_left = 438.112
+offset_top = 482.611
+offset_right = 478.112
+offset_bottom = 551.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -885,12 +879,12 @@ script = ExtResource("2_73ekl")
 x_coordinate = 7
 y_coordinate = 8
 
-[node name="Label64" type="Label" parent="SubViewportContainer/SubViewport/Control"]
+[node name="Label64" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control"]
 layout_mode = 0
-offset_left = 495.0
-offset_top = 472.0
-offset_right = 535.0
-offset_bottom = 541.0
+offset_left = 497.112
+offset_top = 482.611
+offset_right = 537.112
+offset_bottom = 551.611
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "X"
@@ -898,4 +892,1074 @@ script = ExtResource("2_73ekl")
 x_coordinate = 8
 y_coordinate = 8
 
-[connection signal="pressed" from="Save" to="." method="_on_save_pressed"]
+[node name="VSeparator" type="VSeparator" parent="SubViewportContainer/SubViewport/HBoxContainer"]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="SubViewportContainer/SubViewport/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -304.5
+offset_top = -305.5
+offset_right = 304.5
+offset_bottom = 305.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_sfyqg")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 222.459
+offset_top = 178.481
+offset_right = 262.459
+offset_bottom = 247.481
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 1
+y_coordinate = 1
+
+[node name="Label2" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 259.878
+offset_top = 183.642
+offset_right = 299.878
+offset_bottom = 252.642
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 2
+y_coordinate = 1
+
+[node name="Label3" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 299.039
+offset_top = 185.803
+offset_right = 339.039
+offset_bottom = 258.803
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 3
+y_coordinate = 1
+
+[node name="Label4" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 337.297
+offset_top = 190.094
+offset_right = 377.297
+offset_bottom = 259.094
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 4
+y_coordinate = 1
+
+[node name="Label5" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 378.588
+offset_top = 195.255
+offset_right = 418.588
+offset_bottom = 264.255
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 5
+y_coordinate = 1
+
+[node name="Label6" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 418.588
+offset_top = 199.126
+offset_right = 458.588
+offset_bottom = 268.126
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 6
+y_coordinate = 1
+
+[node name="Label7" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 458.588
+offset_top = 202.997
+offset_right = 498.588
+offset_bottom = 271.997
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 7
+y_coordinate = 1
+
+[node name="Label8" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 502.459
+offset_top = 208.158
+offset_right = 542.459
+offset_bottom = 277.158
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 8
+y_coordinate = 1
+
+[node name="Label9" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 205.684
+offset_top = 201.707
+offset_right = 245.684
+offset_bottom = 270.707
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 1
+y_coordinate = 2
+
+[node name="Label10" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 248.265
+offset_top = 206.868
+offset_right = 288.265
+offset_bottom = 275.868
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 2
+y_coordinate = 2
+
+[node name="Label11" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 288.265
+offset_top = 212.029
+offset_right = 328.265
+offset_bottom = 281.029
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 3
+y_coordinate = 2
+
+[node name="Label12" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 328.265
+offset_top = 214.61
+offset_right = 368.265
+offset_bottom = 283.61
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 4
+y_coordinate = 2
+
+[node name="Label13" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 370.846
+offset_top = 219.771
+offset_right = 410.846
+offset_bottom = 288.771
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 5
+y_coordinate = 2
+
+[node name="Label14" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 412.136
+offset_top = 223.642
+offset_right = 452.136
+offset_bottom = 292.642
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 6
+y_coordinate = 2
+
+[node name="Label15" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 456.007
+offset_top = 228.803
+offset_right = 496.007
+offset_bottom = 297.803
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 7
+y_coordinate = 2
+
+[node name="Label16" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 501.168
+offset_top = 232.674
+offset_right = 541.168
+offset_bottom = 301.674
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 8
+y_coordinate = 2
+
+[node name="Label17" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 188.91
+offset_top = 226.223
+offset_right = 228.91
+offset_bottom = 295.223
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 1
+y_coordinate = 3
+
+[node name="Label18" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 231.491
+offset_top = 230.094
+offset_right = 271.491
+offset_bottom = 299.094
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 2
+y_coordinate = 3
+
+[node name="Label19" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 274.071
+offset_top = 236.545
+offset_right = 314.071
+offset_bottom = 305.545
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 3
+y_coordinate = 3
+
+[node name="Label20" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 316.652
+offset_top = 241.707
+offset_right = 356.652
+offset_bottom = 310.707
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 4
+y_coordinate = 3
+
+[node name="Label21" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 361.813
+offset_top = 245.578
+offset_right = 401.813
+offset_bottom = 314.578
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 5
+y_coordinate = 3
+
+[node name="Label22" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 405.684
+offset_top = 252.029
+offset_right = 445.684
+offset_bottom = 321.029
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 6
+y_coordinate = 3
+
+[node name="Label23" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 452.136
+offset_top = 257.19
+offset_right = 492.136
+offset_bottom = 326.19
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 7
+y_coordinate = 3
+
+[node name="Label24" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 501.168
+offset_top = 262.352
+offset_right = 541.168
+offset_bottom = 331.352
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 8
+y_coordinate = 3
+
+[node name="Label25" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 170.846
+offset_top = 250.739
+offset_right = 210.846
+offset_bottom = 319.739
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 1
+y_coordinate = 4
+
+[node name="Label26" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 212.136
+offset_top = 259.771
+offset_right = 252.136
+offset_bottom = 328.771
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 2
+y_coordinate = 4
+
+[node name="Label27" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 259.878
+offset_top = 263.642
+offset_right = 299.878
+offset_bottom = 332.642
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 3
+y_coordinate = 4
+
+[node name="Label28" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 302.459
+offset_top = 270.094
+offset_right = 342.459
+offset_bottom = 339.094
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 4
+y_coordinate = 4
+
+[node name="Label29" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 350.201
+offset_top = 276.545
+offset_right = 390.201
+offset_bottom = 345.545
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 5
+y_coordinate = 4
+
+[node name="Label30" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 397.942
+offset_top = 282.997
+offset_right = 437.942
+offset_bottom = 351.997
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 6
+y_coordinate = 4
+
+[node name="Label31" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 449.555
+offset_top = 288.158
+offset_right = 489.555
+offset_bottom = 357.158
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 7
+y_coordinate = 4
+
+[node name="Label32" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 498.588
+offset_top = 295.9
+offset_right = 538.588
+offset_bottom = 364.9
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 8
+y_coordinate = 4
+
+[node name="Label33" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 147.911
+offset_top = 280.541
+offset_right = 187.911
+offset_bottom = 349.541
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 1
+y_coordinate = 5
+
+[node name="Label34" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 194.071
+offset_top = 292.029
+offset_right = 234.071
+offset_bottom = 361.029
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 2
+y_coordinate = 5
+
+[node name="Label35" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 244.394
+offset_top = 295.9
+offset_right = 284.394
+offset_bottom = 364.9
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 3
+y_coordinate = 5
+
+[node name="Label36" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 290.846
+offset_top = 304.932
+offset_right = 330.846
+offset_bottom = 373.932
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 4
+y_coordinate = 5
+
+[node name="Label37" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 339.878
+offset_top = 310.094
+offset_right = 379.878
+offset_bottom = 379.094
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 5
+y_coordinate = 5
+
+[node name="Label38" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 392.781
+offset_top = 316.545
+offset_right = 432.781
+offset_bottom = 385.545
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 6
+y_coordinate = 5
+
+[node name="Label39" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 444.394
+offset_top = 325.578
+offset_right = 484.394
+offset_bottom = 394.578
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 7
+y_coordinate = 5
+
+[node name="Label40" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 496.007
+offset_top = 330.739
+offset_right = 536.007
+offset_bottom = 399.739
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 8
+y_coordinate = 5
+
+[node name="Label41" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 122.105
+offset_top = 316.67
+offset_right = 162.105
+offset_bottom = 385.67
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 1
+y_coordinate = 6
+
+[node name="Label42" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 172.136
+offset_top = 322.997
+offset_right = 212.136
+offset_bottom = 391.997
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 2
+y_coordinate = 6
+
+[node name="Label43" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 225.039
+offset_top = 330.739
+offset_right = 265.039
+offset_bottom = 399.739
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 3
+y_coordinate = 6
+
+[node name="Label44" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 275.362
+offset_top = 339.771
+offset_right = 315.362
+offset_bottom = 408.771
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 4
+y_coordinate = 6
+
+[node name="Label45" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 324.394
+offset_top = 348.803
+offset_right = 364.394
+offset_bottom = 417.803
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 5
+y_coordinate = 6
+
+[node name="Label46" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 382.459
+offset_top = 356.545
+offset_right = 422.459
+offset_bottom = 425.545
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 6
+y_coordinate = 6
+
+[node name="Label47" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 436.652
+offset_top = 362.997
+offset_right = 476.652
+offset_bottom = 431.997
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 7
+y_coordinate = 6
+
+[node name="Label48" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 496.007
+offset_top = 372.029
+offset_right = 536.007
+offset_bottom = 441.029
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 8
+y_coordinate = 6
+
+[node name="Label49" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 97.2972
+offset_top = 357.836
+offset_right = 137.297
+offset_bottom = 426.836
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 1
+y_coordinate = 7
+
+[node name="Label50" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 150.201
+offset_top = 366.868
+offset_right = 190.201
+offset_bottom = 435.868
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 2
+y_coordinate = 7
+
+[node name="Label51" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 203.395
+offset_top = 370.864
+offset_right = 243.395
+offset_bottom = 439.864
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 3
+y_coordinate = 7
+
+[node name="Label52" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 257.297
+offset_top = 384.932
+offset_right = 297.297
+offset_bottom = 453.932
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 4
+y_coordinate = 7
+
+[node name="Label53" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 314.072
+offset_top = 392.674
+offset_right = 354.072
+offset_bottom = 461.674
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 5
+y_coordinate = 7
+
+[node name="Label54" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 370.846
+offset_top = 401.707
+offset_right = 410.846
+offset_bottom = 470.707
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 6
+y_coordinate = 7
+
+[node name="Label55" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 430.201
+offset_top = 409.449
+offset_right = 470.201
+offset_bottom = 478.449
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 7
+y_coordinate = 7
+
+[node name="Label56" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 490.846
+offset_top = 418.481
+offset_right = 530.846
+offset_bottom = 487.481
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 8
+y_coordinate = 7
+
+[node name="Label57" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 78.2338
+offset_top = 391.509
+offset_right = 118.234
+offset_bottom = 460.509
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 1
+y_coordinate = 8
+
+[node name="Label58" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 124.394
+offset_top = 410.739
+offset_right = 164.394
+offset_bottom = 479.739
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 2
+y_coordinate = 8
+
+[node name="Label59" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 179.878
+offset_top = 421.061
+offset_right = 219.878
+offset_bottom = 490.061
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 3
+y_coordinate = 8
+
+[node name="Label60" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 233.072
+offset_top = 430.219
+offset_right = 273.072
+offset_bottom = 499.219
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 4
+y_coordinate = 8
+
+[node name="Label61" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 294.717
+offset_top = 445.578
+offset_right = 334.717
+offset_bottom = 514.578
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 5
+y_coordinate = 8
+
+[node name="Label62" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 354.363
+offset_top = 453.444
+offset_right = 394.363
+offset_bottom = 522.444
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 6
+y_coordinate = 8
+
+[node name="Label63" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 422.458
+offset_top = 462.352
+offset_right = 462.458
+offset_bottom = 531.352
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 7
+y_coordinate = 8
+
+[node name="Label64" type="Label" parent="SubViewportContainer/SubViewport/HBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 488.589
+offset_top = 471.251
+offset_right = 528.589
+offset_bottom = 540.251
+scale = Vector2(0.514014, 0.512646)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+script = ExtResource("2_73ekl")
+x_coordinate = 8
+y_coordinate = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -99.0
+offset_top = -66.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Save" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Saves image to standard picture folder"
+text = "Save Image"
+
+[node name="Copy" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Feature currently not available"
+text = "Copy Image"
+
+[connection signal="pressed" from="VBoxContainer/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="VBoxContainer/Copy" to="." method="_on_copy_pressed"]
